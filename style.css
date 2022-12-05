@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-image: url('../space_Invader_JS/img/595000.jpg');
+}
+p{
+    position: absolute;
+    z-index: 10;
+    color: white;
+    margin: 0;
+    top: 1rem;
+    left: 1rem;
+    font-family: sans-serif;
+    font-size: larger;
+}
+#ending{
+    font-size: 15rem;
+    color: red;
+    font-family: sans-serif;
+    margin-top: 5rem;
+    display: none;
+}
+#canvasid{
+    background-color: rgba(0, 0, 0, 0);
+}
