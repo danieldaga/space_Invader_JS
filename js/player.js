@@ -25,8 +25,7 @@ class Player {
     }
 
     draw() {
-        // c.fillStyle = 'red'
-        // c.fillRect(this.position.x, this.position.y, this.width, this.height)
+        ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
         ctx.save()
         ctx.globalAlpha = this.opacity
         ctx.translate(
