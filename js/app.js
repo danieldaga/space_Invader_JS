@@ -3,8 +3,10 @@ const ending = document.querySelector('#ending')
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 1480
-canvas.height = 750
+
+
+canvas.width = 650
+canvas.height = 650
 
 
 const player = new Player()
@@ -50,13 +52,15 @@ function createParticles({ object, color, fades }) {
     }
 };
 
+const background= new Image()
+background.src="img/space.jpg"
+
 
 function animate() {
     if (!game.active) return
 
     requestAnimationFrame(animate);
-    ctx.fillStyle = 'black'
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    ctx.drawImage(background,0, 0, canvas.width, canvas.height)
     player.update();
 
     particles.forEach((particle, i) => {
