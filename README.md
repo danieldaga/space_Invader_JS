@@ -18,8 +18,8 @@
 
 - [ ] Dinamic score labels 
 - [ ] Bombs
-- [ ] Machine gun power-up
-- [ ] Progressively harder enemies
-- [ ] Spaceship sprite animation
-- [ ] Start and game over UI
+- [x] Machine gun power-up
+- [x] Progressively harder enemies
+- [x] Game over UI
 - [ ] Sound effects and music
+- [ ] Start button
