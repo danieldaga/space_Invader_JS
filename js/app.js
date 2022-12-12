@@ -91,7 +91,6 @@ function animate() {
             invaderProjectile.update()
         };
 
-        // projectile hits player, create explosion, explosion removes
         if (invaderProjectile.position.y + invaderProjectile.height >= player.position.y &&
             invaderProjectile.position.x + invaderProjectile.width >= player.position.x &&
             invaderProjectile.position.x <= player.position.x + player.width) {  
@@ -194,7 +193,6 @@ function animate() {
         player.rotation = 0;
     }
 
-    // spawning enemies
     if (frames % randomInterval === 0) {
         grids.push(new Grid());
         randomInterval = Math.floor(Math.random() * 500 + 500);
