@@ -2,10 +2,14 @@ const scoreElement = document.querySelector('#scoreElement')
 const ending = document.querySelector('#ending')
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
+let refresh = document.getElementById('refresh');
 
 
 
-canvas.width = 650
+
+
+
+canvas.width = 900
 canvas.height = 650
 
 
@@ -103,6 +107,7 @@ function animate() {
                 game.active = false;
                 console.log("game over")
                 ending.style.display = 'block'
+                refresh.style.display='block'
             }, 2000)
 
             createParticles({
@@ -130,7 +135,7 @@ function animate() {
     grids.forEach((grid, gridIndex) => {
         grid.update();
 
-        // spawning projectiles
+        
         if (frames % 100 === 0 && grid.invaders.length > 0) {
             grid.invaders[Math.floor(Math.random() * grid.invaders.length)].shoot(invaderProjectiles)
         }
@@ -138,7 +143,6 @@ function animate() {
         grid.invaders.forEach((invader, i) => {
             invader.update({ velocity: grid.velocity })
 
-            // projectiles hit enemy
             projectiles.forEach((projectile, j) => {
                 if (projectile.position.y - projectile.radius <= invader.position.y + invader.height &&
                     projectile.position.x + projectile.radius >= invader.position.x &&
@@ -150,7 +154,7 @@ function animate() {
                         const invaderFound = grid.invaders.find(invader2 => invader2 === invader)
                         const projectileFound = projectiles.find(projectile2 => projectile2 === projectile)
 
-                        // remove invader and projectile
+                        
                         if (invaderFound && projectileFound) {
                             score += 100
                             scoreElement.innerHTML = score
@@ -240,4 +244,7 @@ window.addEventListener('keyup', ({ key }) => {
         case ' ':
             break;
     }
+})
+refresh.addEventListener('click', _ => {
+    location.reload();
 })
